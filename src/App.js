@@ -1,18 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
-// import About from './components/About';
+import About from './components/About';
 import { useState } from 'react';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import React from "react";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
-// import About from './components/About';
 
 
 
@@ -56,26 +55,26 @@ function App() {
   }
   return (
     <>
-      {/* <Router> */}
-        <Navbar mode={mode} toggleMode={toggleMode} />
+      <Router>
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
 
         <Alert alert={alert} />
         <div className="container my-3">
-          {/* <Switch> */}
+          <Switch>
 
-            {/* <Route exact path="/about"> */}
-              {/* <About/> */}
-            {/* </Route> */}
-            {/* <Route exact path="/"> */}
-              <TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />
-            {/* </Route> */}
-
-
+            <Route exact path="/about">
+              <About mode={mode}/>
+            </Route>
+            <Route exact path="/">
+              <TextForm heading="Try TextUtils Word Counter,Character Counter,Remove Extra Spaces" mode={mode} showAlert={showAlert} />
+            </Route>
 
 
-          {/* </Switch> */}
+
+
+          </Switch>
         </div>
-      {/* </Router> */}
+      </Router>
 
     </>
 
